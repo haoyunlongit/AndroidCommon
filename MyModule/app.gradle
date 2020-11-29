@@ -1,0 +1,33 @@
+ext {
+    isRelease = true
+
+    androidID = [
+            compileSdkVersion : 30,
+            buildToolsVersion : "30.0.2",
+
+            applicationId : "com.hyl.mymodule",
+            minSdkVersion : 29,
+            targetSdkVersion : 30,
+            versionCode : 1,
+            versionName : "1.0",
+
+            testInstrumentationRunner : "androidx.test.runner.AndroidJUnitRunner"
+    ]
+
+    tempUrl = [
+            "debug" : "fff",
+           "release" : "r~~~~"
+    ]
+
+    dependenciesID = [
+            appcompat : 'androidx.appcompat:appcompat:1.2.0',
+            material : 'com.google.android.material:material:1.2.1',
+            constraintlayout : 'androidx.constraintlayout:constraintlayout:2.0.4',
+            junit : 'junit:junit:4.+',
+    ]
+
+    url = [
+            "debug": "fffff",
+            "release": "vvvv"
+          ]
+}

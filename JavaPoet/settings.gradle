@@ -1,0 +1,6 @@
+include ':compiler'
+include ':arouter-annomation'
+include ':arrout-annotations'
+include ':arout-annmation'
+include ':app'
+rootProject.name = "JavaPoet"

@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+}
+
+println "hoy ---> lib student hao 2"
+temp.each {
+    k,ve ->  println "hoy ---> key -> $k %%%% -> value -> $ve"
+}
+
+def androidX = rootProject.ext.androidID
+def myDef = rootProject.ext.temp
+android {
+    compileSdkVersion androidX.compileSdkVersion
+    buildToolsVersion androidX.buildToolsVersion
+
+    defaultConfig {
+        applicationId androidX.applicationId
+        minSdkVersion androidX.minSdkVersion
+        targetSdkVersion androidX.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("boolean", "isRelease", String.valueOf(isRelease));
+    }
+
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "debug", "\"${tempUrl.debug}\"");
+        }
+        release {
+            buildConfigField("String", "release", "\"${tempUrl.debug}\"");
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        println "ffffff JavaVersion =$myDef.javaVersion"
+        sourceCompatibility myDef.javaVersion
+        targetCompatibility myDef.javaVersion
+    }
+
+    sourceSets {
+        main {
+            if (!isRelease) {
+                manifest.srcFile 'src/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                java {
+//                    //屏蔽掉测试代码
+//                    exclude "**/debug/**"
+//                }
+            }
+        }
+    }
+}
+
+dependencies {
+
+    dependenciesID.each {k, v ->
+        println("!!!" + v)
+        if (v.equals("androidx.appcompat:appcompat:1.2.0")) {
+            println("my print")
+        }
+        implementation v}
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    if (isRelease) {
+        implementation project (":login")
+        implementation project (":register")
+    } else {
+
+    }
+}

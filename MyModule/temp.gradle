@@ -1,0 +1,8 @@
+ext {
+    temp = [
+            "javaVersion" : "$JavaVersion.VERSION_1_8",
+            "lala" : 'fefe',
+            'qwww' : 'fvbbn',
+            'xde' : 'werrt'
+    ]
+}

@@ -1,0 +1,4 @@
+include ':compiler'
+include ':arouter_annotation'
+include ':app'
+rootProject.name = "Hyl_Model"

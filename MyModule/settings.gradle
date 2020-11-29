@@ -1,0 +1,6 @@
+include ':serviceapplication2'
+include ':serviceapplication'
+include ':register'
+include ':login'
+include ':app'
+rootProject.name = "MyModule"
