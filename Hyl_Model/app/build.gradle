@@ -14,6 +14,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [student: 'hello nihao javapoet']
+            }
+        }
     }
 
     buildTypes {
@@ -38,4 +44,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation project(':arouter_annotation')
+    annotationProcessor project(':compiler')
 }
