@@ -19,6 +19,12 @@ allprojects {
         google()
         jcenter()
     }
+
+    ext {
+        rxjavaVersion = '2.1.3'
+        rxandroidVersion = '2.0.2'
+        rxkotlinVersion = '2.2.0'
+    }
 }
 
 task clean(type: Delete) {
